@@ -1,4 +1,4 @@
-let sketch = function(p) {
+let sketch = function (p) {
   const THE_SEED = p.floor(p.random(9999999));
   const particle_set_size = 3000;
   const number_of_sets = 1;
@@ -8,7 +8,7 @@ let sketch = function(p) {
 
   let particle_sets = [];
 
-  p.setup = function() {
+  p.setup = function () {
     p.createCanvas(1200, 1200);
     p.background('#e7e7db');
 
@@ -32,16 +32,16 @@ let sketch = function(p) {
     }
   };
 
-  p.draw = function() {
-    particle_sets.forEach(function(particles, index) {
-      particles.forEach(function(particle) {
+  p.draw = function () {
+    particle_sets.forEach(function (particles, index) {
+      particles.forEach(function (particle) {
         particle.update(index);
         particle.display(index);
       });
     });
   };
 
-  p.keyPressed = function() {
+  p.keyPressed = function () {
     if (p.keyCode === 80) p.saveCanvas('aquarelle_' + THE_SEED, 'jpeg'); // Press P to download image
   };
 
